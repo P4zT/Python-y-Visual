@@ -1,5 +1,5 @@
-def calcularIMC (peso, altura):
-  return peso / (altura * altura)
+def calcularIMC (kilo, centimetro):
+  return kilo / (centimetro * centimetro)
 
 def nivelDePeso(IMC):
   if IMC < 18.5:
@@ -24,37 +24,76 @@ def main():
   print("     ")
   try:
       
-      n = str(input("Ingrese su nombre: "))
+      while True:
+         n = input("Ingresa tu nombre: ").strip()
+         if not n:
+            print("El nombre no puede estar vacio.")
+         else:
+            break
 
-      ap = str(input("Ingresa tu primer apellido: "))
+      while True:
+         pa = input("Ingresa tu primer apellido: ").strip()
+         if not pa:
+            print("El primer apellido no puede estar vacio.")
+         else:
+            break
 
-      am = str(input("Ingresa tu apellido materno: "))
+      while True:
+         sp = input ("Ingresa tu segundo apellido: ").strip()
+         if not sp:
+            print("El segundo apellido no puede estar vacio.")
+         else:
+            break
 
       print("    ")
 
-      print ("Hola", n, ap, am, "calcularemos tu IMC:")
+      print ("Hola", n, pa, sp, "calcularemos tu IMC:")
 
       print("     ")
 
-      e = int(input("Ingresa tu edad: "))
+      while True:
+         e = input("Ingresa tu edad: ")
+         
+         try:
+            numero = int(e)
+            if numero > 0:
+             print("Numero valido:", numero)
+             break
+            else:
+               print ("Debe ser un numero positivo,")
+         except ValueError:
+            print("Error: Solo se permiten números enteros. Intenta de nuevo.")  
 
-      if e <= 0:
-          return
+      while True:
+         peso = input("Ingresa tu peso: ")
+         
+         try:
+            kilo = float(peso)
+            if kilo > 0:
+             print("Numero valido:", peso)
+            break
+         except ValueError:
+            print("Error: Solo se permiten números enteros o con decimales. Intenta de nuevo.") 
 
-      peso = float(input("Ingresa tu peso (KG): "))
+      while True:
+         altura = input("Ingresa tu altura: ")
+         
+         try:
+            centimetro = float(altura)
+            if centimetro > 0:
+             print("Numero valido:", altura)
+            break
+         except ValueError:
+            print("Error: Solo se permiten números enteros. Intenta de nuevo.")  
+            break
 
-      altura = float(input("Ingresa tu altura (M): "))
+      print("Su nivel de peso es:", nivelDePeso(calcularIMC(kilo, centimetro)))
 
-      if peso <= 0 or altura <= 0:
-            return
-      
-      print("Su nivel de peso es:", nivelDePeso (calcularIMC(peso, altura)))
-
-      print("Gracias", n, ap, am, "por utilizar esta calculadora de IMC")
+      print("Gracias", n, pa, sp, "por utilizar esta calculadora de IMC")
 
       print ("Toma acciones dependiendo tu nivel de peso.") 
     
-      print("Aqui te lo recuerdo:", nivelDePeso(calcularIMC(peso, altura)))
+      print("Aqui te lo recuerdo:", nivelDePeso(calcularIMC(kilo, centimetro)))
 
       print ("Consulta a tu medico")
 
