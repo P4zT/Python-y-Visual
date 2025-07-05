@@ -1,4 +1,5 @@
 Practicas de UCAMP
+
 Para crear mi código empecé investigando y apoyándome con  la demo que nos  brindaron. 
 Al tener una referencia de cómo iniciar mi código, comencé colocando formulas del Índice de Masa Corporal, las operaciones  que llevan a obtener el índice de masa  corporal del usuario,  así como colocar una referencia de su índice de masa corporal.
 Una vez terminado empecé abriendo un “def main” para organizar lo que alojara las impresiones al usuario, el llenado de datos y por último la impresión de su Índice de Masa Corporal.
